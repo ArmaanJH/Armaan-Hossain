@@ -38,7 +38,7 @@ export default function Home() {
             A software engineer who leverages ReactJS, Python, and a strong
             foundation in Computer Science and Cybersecurity to deliver secure,
             high-quality solutions within Agile teams, driven by continuous
-            learning, innovation, and a passion for collaboration.
+            learning, innovation, and a passion for collaboration. 
           </p>
         </div>
       </div>
