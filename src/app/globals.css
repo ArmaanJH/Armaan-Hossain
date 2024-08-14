@@ -32,7 +32,16 @@ body {
   }
 }
 
-@keyframes slide {
+@keyframes slide-sm {
+  0% {
+    transform: translateX(-230%);
+  }
+  100% {
+    transform: translateX(240%);
+  }
+}
+
+@keyframes slide-md {
   0% {
     transform: translateX(-100%);
   }
@@ -41,43 +50,10 @@ body {
   }
 }
 
-.animate-slide {
-  animation: slide 20s linear infinite;
+.sm\:animate-slide-sm {
+  animation: slide-sm 15s linear infinite;
 }
 
-.animate-slide-left-to-right {
-  animation: slide-left-to-right 20s linear infinite;
-}
-
-.animate-slide-right-to-left {
-  animation: slide-right-to-left 20s linear infinite;
-}
-
-@keyframes slide-left-to-right {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes slide-right-to-left {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.animate-slide-left-to-right > .flex,
-.animate-slide-right-to-left > .flex {
-  display: flex;
-  width: 200%;
-}
-
-.animate-slide-left-to-right > div,
-.animate-slide-right-to-left > div {
-  width: 25%;
+.md\:animate-slide-md {
+  animation: slide-md 25s linear infinite;
 }
