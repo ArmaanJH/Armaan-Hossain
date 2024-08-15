@@ -6,8 +6,7 @@ export default function Home() {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>My Page Title</title>
-        {/* You can add other meta tags here as needed */}
+        <title>Home</title>
       </Head>
       <main className="relative flex flex-col md:flex-row min-h-screen min-w-screen h-screen p-6 md:p-24 bg-gray-300 overflow-hidden">
         {/* Moving Squares */}
