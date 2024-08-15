@@ -50,16 +50,12 @@ body {
   }
 }
 
-.sm\:animate-slide-sm {
-  animation: slide-sm 15s linear infinite;
-}
-
 .md\:animate-slide-md {
   animation: slide-md 25s linear infinite;
 }
 
 @media (max-width: 650px) {
   .sm\:animate-slide-sm {
-    animation: slide-sm 15s linear infinite !important;
+    animation: slide-sm 25s linear infinite !important;
   }
 }
