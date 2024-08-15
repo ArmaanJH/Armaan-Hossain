@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 
-export default function ContactForm({ onClose }) {
+type ContactFormProps = {
+  onClose: () => void;
+}
+
+export default function ContactForm({ onClose }: ContactFormProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,7 +27,7 @@ export default function ContactForm({ onClose }) {
           <label className="block text-sm font-medium text-gray-700">Message</label>
           <textarea
             className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
-            rows="4"
+            rows={4}
             required
           ></textarea>
         </div>

@@ -77,7 +77,6 @@ export default function Home() {
           <AnimatePresence>
             {isFormVisible && (
               <ContactForm
-                isVisible={isFormVisible}
                 onClose={() => setFormVisible(false)}
               />
             )}
