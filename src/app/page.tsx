@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from 'react';
 import ContactForm from "./components/contactForm";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -66,6 +66,8 @@ export default function Home() {
               <p className="text-white text-center md:text-right text-4xl sm:text-6xl md:text-7xl font-bold leading-tight transition-transform transform hover:scale-105">ABOUT</p>
             </Link>
           </div>
+
+          {/*Contact Form Section*/}
           <div className="w-full mt-4">
             <p 
               onClick={() => setFormVisible(true)} 
@@ -74,11 +76,23 @@ export default function Home() {
                 CONTACT ME
             </p>
           </div>
+
+          {/* Contact Form Overlay */}
           <AnimatePresence>
             {isFormVisible && (
-              <ContactForm
-                onClose={() => setFormVisible(false)}
-              />
+              <>
+                <motion.div 
+                  className="fixed inset-0 bg-black/50 backdrop-blur-lg z-40"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                ></motion.div>
+                <ContactForm
+                  onClose={() => setFormVisible(false)}
+                  className="z-50"
+                />
+              </>
             )}
           </AnimatePresence>
         </div>
