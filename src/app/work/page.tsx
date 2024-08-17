@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; 
 
 
 export default function Work() {
@@ -72,9 +72,9 @@ export default function Work() {
                 <li key={index}>
                   <button 
                     onClick={() => scrollToSection(index)} 
-                    className="text-gray-500 text-3xl p-4 transition-transform transform hover:scale-105"
+                    className="text-black text-3xl p-2 transition-transform transform hover:scale-105"
                   >
-                    {item.title}
+                    {item.title.toUpperCase()}
                   </button>
                 </li>
               ))}
