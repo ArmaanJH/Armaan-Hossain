@@ -59,3 +59,13 @@ body {
     animation: slide-sm 25s linear infinite !important;
   }
 }
+
+.gradient-text {
+  background: linear-gradient(10deg, white, black);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 500% 100%;
+  background-position: 100% 0;
+  transition: background-position 1s ease-out;
+}
+
