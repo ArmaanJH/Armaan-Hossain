@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 type ContactFormProps = {
   onClose: () => void;
-  className?: string;
+  className: string;
 };
 
-export default function ContactForm({ onClose, className }: ContactFormProps) {
+export default function ContactForm({ onClose }: ContactFormProps) {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -16,7 +16,7 @@ export default function ContactForm({ onClose, className }: ContactFormProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-700 p-6 shadow-lg rounded-lg max-w-lg h-1/2 w-full z-50 ${className}`} // Apply className here
+      className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-700 px-4 pt-4 shadow-lg rounded-lg max-w-lg h-1/2 w-full z-50"
     >
       <form className='h-full flex flex-col'>
         <div className="mb-4">
@@ -25,7 +25,7 @@ export default function ContactForm({ onClose, className }: ContactFormProps) {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 p-2 block text-black w-full border border-gray-300 rounded-md"
+            className="mt-1 p-2 block bg-gray-300 font-bold text-black w-full border border-gray-300 rounded-md"
             required
           />
         </div>
@@ -34,11 +34,11 @@ export default function ContactForm({ onClose, className }: ContactFormProps) {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="mt-1 p-2 block text-black w-full border border-gray-300 rounded-md h-full"
+            className="mt-1 p-2 block bg-gray-300 font-medium text-black w-full border border-gray-300 rounded-md h-full"
             required
           ></textarea>
         </div>
-        <div className='flex-shrink-0 flex flex-row'>
+        <div className='flex-shrink-0 flex flex-row p-8'>
           <button type="submit" className="bg-gray-500 font-bold w-1/2 text-white px-2 py-2 rounded-md">
             Send
           </button>
