@@ -61,11 +61,14 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(10deg, white, black);
+  background: linear-gradient(to right, black, black);
   -webkit-background-clip: text;
-  color: transparent;
-  background-size: 500% 10%;
-  background-position: 100% 0;
-  transition: background-position 1s ease-out;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gradient-text.active {
+  background-position: right bottom;
 }
 
