@@ -1,7 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion'; 
+import { motion } from 'framer-motion';
+import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
 
 export default function Work() {
   const workItems = [
@@ -56,78 +57,131 @@ export default function Work() {
   }, []);
 
   return (
-    <main className="relative flex flex-col min-h-screen min-w-screen h-auto p-6 md:px-16 md:pb-16 bg-gray-300 overflow-y-auto">
-      
-      {/* Top Section: Description and TOC */}
-      <div className="flex flex-col md:flex-row w-full min-h-screen items-center justify-center">
+    <ParallaxProvider>
+      <main className="relative flex flex-col min-h-screen min-w-screen h-auto bg-gray-300 overflow-y-auto">
         
-        {/* Left Side with Description */}
-        <div className="flex-1 flex items-center justify-center p-6">
-          <p className="text-xl text-center">
-            Below is my previous work as well some explanations of my role in these projects. If you&apos;d like more detail, you can download my resume by clicking the button below.
-          </p>
-        </div>
+        {/* Parallax Effect with Moving Squares */}
+          <ParallaxBanner
+            layers={[
+              {
+                children: (
+                  <div className="relative flex flex-col pt-28 w-[100vw] space-y-8 overflow-visible">
+                    {/* Row 1 */}
+                    <div className="flex items-start justify-start gap-4 sm:gap-8 md:gap-12 sm:animate-slide-sm md:animate-slide-md">
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                    </div>
+                    {/* Row 2 */}
+                    <div className="flex items-center justify-center gap-4 sm:gap-8 md:gap-12 sm:animate-slide-sm md:animate-slide-md">
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                    </div>
 
-        {/* Table of Contents on the Right */}
-        <div className="flex-1 flex items-center justify-center">
-          <div className="bg-white p-6 shadow-lg rounded-lg h-[60vh] w-full max-w-xl flex flex-col justify-center items-start text-left">
-            <h2 className="text-xl font-bold mb-4 text-black text-center w-full">PROJECTS</h2>
-            <ul className="space-y-4">
-              {workItems.map((item, index) => (
-                <li key={index}>
-                  <button 
-                    onClick={() => scrollToSection(index)} 
-                    className="text-black text-3xl p-2 transition-transform transform hover:scale-105"
-                  >
-                    {item.title.toUpperCase()}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+                    {/* Row 3 */}
+                    <div className="flex items-end justify-end gap-4 sm:gap-8 md:gap-12 sm:animate-slide-sm md:animate-slide-md">
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                      <div className="w-[30vw] h-[30vw] sm:w-[30vh] sm:h-[30vh] min-w-[200px] min-h-[200px] bg-gray-900 blur-lg"></div>
+                    </div>
 
-      {/* Work Items Below */}
-      <div className="w-full">
-        {workItems.map((item, index) => (
-          <motion.div
-            key={index}
-            id={`section-${index}`}
-            className={`flex flex-col rounded-lg m-4 min-h-screen ${index % 2 === 0 ? 'items-start bg-gray-100' : 'items-end bg-gray-200'} p-12`}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+                  </div>
+                ),
+                speed: -10,
+              },
+            ]}
+            className="h-screen border-b-8 border-gray-900"
           >
-            <motion.div
-              className="relative w-full"
-              initial={{ x: index % 2 === 0 ? '-100%' : '100%', opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: 'spring', stiffness: 50, delay: 0.2 }}
-            >
-              <Image src={item.image} alt={item.title} layout="responsive" width={700} height={400} className="rounded-lg shadow-lg object-cover" />
-            </motion.div>
-            <motion.h1
-              className="text-4xl md:text-7xl gradient-text p-2 mt-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              {item.title}
-            </motion.h1>
-            <motion.p
-              className={`font-semibold text-gray-900 text-xl mt-4 ${index % 2 === 0 ? 'text-left' : 'text-right'}`}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              {item.text}
-            </motion.p>
-          </motion.div>
-        ))}
-      </div>
-    </main>
-  );
+            
+          <div className="relative z-10 flex flex-col md:flex-row w-full min-h-screen items-center justify-center">
+            {/* Left Side with Description */}
+            <div className="flex-1 flex flex-col items-center justify-center p-6">
+              <p className="text-xl text-center text-white font-bold">
+                Below is my previous work as well as some explanations of my role in these projects. If you&apos;d like more detail, you can download my resume by clicking the button below.
+              </p>
+              <div className="mt-4">
+                <button className="rounded-full bg-gray-900 px-4 py-2">
+                  <p className="font-semibold">DOWNLOAD</p>
+                </button>
+              </div>
+            </div>
+            {/* Table of Contents on the Right */}
+            <div className="flex-1 flex items-center justify-center">
+              <div className="p-6 h-[60vh] w-full max-w-xl flex flex-col justify-center items-start text-left">
+                <h2 className="text-5xl font-bold mb-4 text-white text-center w-full">PROJECTS</h2>
+                <ul className="space-y-4">
+                  {workItems.map((item, index) => (
+                    <li key={index}>
+                      <button 
+                        onClick={() => scrollToSection(index)} 
+                        className="text-white font-bold text-3xl p-2 transition-transform transform hover:scale-105"
+                      >
+                        {item.title.toUpperCase()}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </ParallaxBanner>
+  
+        {/* Work Items Below */}
+        <div className="w-full bg-transparent">
+          {workItems.map((item, index) => (
+            <div id={`section-${index}`} key={index}>
+              <ParallaxBanner
+                key={index}
+                layers={[
+                  {
+                    image: `/images/${index % 2 === 0 ? 'black.jpg' : 'white.jpg'}`,
+                    speed: 20,
+                  },
+                ]}
+                className="min-h-screen flex flex-col md:flex-row items-center justify-between"
+              >
+                <motion.div
+                  className={`relative w-full md:w-1/2 ${index % 2 === 0 ? 'order-1' : 'order-2'}`}
+                  initial={{ x: index % 2 === 0 ? '-100%' : '100%', opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: 'spring', stiffness: 20, delay: 0 }}
+                >
+                  <Image src={item.image} alt={item.title} layout="responsive" width={700} height={400} className={`shadow-lg object-cover ${index % 2 === 0 ? 'rounded-r-lg' : 'rounded-l-lg'}`} />
+                </motion.div>
+                <motion.div
+                  className={`flex flex-col w-full md:w-1/2 p-6 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  style={{ zIndex: 10 }}
+                >
+                  <motion.h1
+                    className={`text-4xl md:text-7xl p-2 ${index % 2 === 0 ? 'text-white' : 'text-gray-900'}`}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 2 }}
+                  >
+                    {item.title}
+                  </motion.h1>
+                  <motion.p
+                    className={`font-semibold text-gray-900 text-xl mt-4 p-4 ${index % 2 === 0 ? 'text-white' : 'text-gray-900'}`}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 2 }}
+                  >
+                    {item.text}
+                  </motion.p>
+                </motion.div>
+              </ParallaxBanner>
+            </div>
+          ))}
+        </div>
+      </main>
+    </ParallaxProvider>
+  );  
 }
