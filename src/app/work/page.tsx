@@ -1,73 +1,94 @@
 'use client';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
-import React from 'react';
+import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function Work() {
   const workItems = [
     {
       title: "Tapped App Inc",
-      text: "Built a user-centric companion web app using NextJS and FireBase, offering Tapped users a dynamic platform to elevate their entertainment careers. Architected core app infrastructure, including the design of advanced features like artist booking platforms and integrated payment systems and email automation. Collaborated on company marketing initiatives, leveraging guerrilla marketing strategies to attract and onboard artists, resulting in a notable user growth.",
+      role: "Developed a user-centric web app using NextJS and Firebase, architecting core infrastructure with advanced features like artist booking platforms and integrated payment systems.",
+      result: "Successfully onboarded a significant number of artists through collaborative marketing strategies, contributing to notable user growth.",
       image: "/images/tapped.png",
-      logo: "/images/tapped_reverse.png"
+      logo: "/images/tapped_reverse.png",
+      url: "https://www.tapped.ai"
     },
     {
       title: "LS Technologies",
-      text: "Spearheaded the development of pivotal features using ReactJS and Python for the Federal Aviation Administration's tool, consistently adhering to Agile methodologies. Implemented a comprehensive error handling system across the website, significantly reducing bugs during product deployment by 67%  and ensuring rigorous testing and debugging of the codebase. Collaborated on the design and management of the SQL database, introducing efficient methods to access data and enhance user experience. Revitalized the user interface of the CRRT tool by integrating Tailwind CSS, resulting in a contemporary and visually appealing web application. Due to security reasons, visuals of this project cannot be shown.",
+      role: "Led the development of key features using ReactJS and Python for the FAA tool, improving error handling and optimizing the SQL database for better data access and user experience.",
+      result: "Reduced bugs during deployment by 67% and revitalized the CRRT tool's user interface, enhancing the overall product quality and user satisfaction.",
       image: "/images/ls_tech.png",
-      logo: "/images/ls_logo.png"
+      logo: "/images/ls_logo.png",
+      url: "https://lstechllc.com"
     },
     {
       title: "Tapped App Inc",
-      text: "Transitioned to a contractual role, providing vital support to the Tapped team during weekends and peak periods. Assisted in team management and significantly influenced investment opportunities by leveraging an investor network and creating compelling demos, driving organizational growth and success. Contributed to the development of an AI-enhanced artist tool suite, leveraging OpenAI and Stable Diffusion, to empower users in their career progression. Developed an AI-driven image generator capable of transforming realtime user-provided images into thematic visuals, serving versatile purposes including album cover creation. Designed and launched four web applications integral to Tapped AI's tool suite, facilitating the implementation of a subscription payment model via Stripe.",
+      role: "Provided vital support in team management and AI tool development, leveraging OpenAI and Stable Diffusion to create innovative features, including an AI-driven image generator.",
+      result: "Influenced investment opportunities, drove organizational growth, and successfully launched four web applications integral to Tapped AI’s tool suite.",
       image: "/images/app_tapped_ai.png",
-      logo: "/images/tapped_reverse.png"
+      logo: "/images/tapped_reverse.png",
+      url: "https://app.tapped.ai/"
     },
     {
       title: "EnterLinked",
-      text: "Founded an app development organization focused on producing thoughtful, utility-based applications for daily use. Currently leading the creation of a social entertainment media ranking app with React Native, Tailwind CSS and Expo Go, enabling users to curate personalized lists of their favorite form of media. Pioneered system design, creating an optimized application structure that reduced costs to an average of $3 per month and achieved instantaneous load times. Conceptualized and executed a user-friendly and aesthetic app interface based on user feedback.",
+      role: "Founded and led the development of a social entertainment media ranking app with React Native and Tailwind CSS, optimizing system design for efficiency and user experience.",
+      result: "Achieved low operational costs and instantaneous load times while delivering a user-friendly and aesthetically pleasing app interface based on user feedback.",
       image: "/images/enterlinked_1.png",
-      logo: "/images/enterlinked_logo.png"
+      logo: "/images/enterlinked_logo.png",
+      url: "https://enterlinked.app"
     },
     {
       title: "Afrozaa Jamil কংকা",
-      text: "Developed a website for the artist Afrozaa Jamil to demonstrate a combination of visual arts and poetry. This website was created using HTML/CSS and Bootstrap and is one of the first projectsI've worked on. the UI and UX was designed to induce the feeling of being in an online gallery to the user and incorporates gallery like design choices to highlight this. Adhered strictly to the customers desired themes and implemented these stylic choices to highlight the artists work.",
+      role: "Developed a visually engaging website using HTML/CSS and Bootstrap, designed to showcase a combination of visual arts and poetry in an online gallery format.",
+      result: "Successfully highlighted the artist's work by adhering to specific design themes and choices, creating an immersive gallery-like user experience.",
       image: "/images/aj_art.png",
-      logo: "/images/enterlinked_logo.png"
+      logo: "/images/aj_logo.png",
+      url: "https://armaanjh.github.io/Afrozaa-Jamil-Art-Website/"
     },
   ];
 
-  const sectionRefs = useRef(workItems.map(() => React.createRef()))
-
-  const scrollToSection = (index: number) => {
-    const section = document.getElementById(`section-${index}`);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   useEffect(() => {
+    const button = document.getElementById('backToTopButton');
+    let lastScrollY = window.scrollY;
+  
     const handleScroll = () => {
-      const sections = document.querySelectorAll('.gradient-text');
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-          section.classList.add('active');
+      if (button) { // Add this null check
+        if (window.scrollY > 200) {  // Adjust the scroll threshold as needed
+          if (window.scrollY > lastScrollY) {
+            button.classList.remove('show');
+            button.classList.add('hide');
+          } else {
+            button.classList.remove('hide');
+            button.classList.add('show');
+          }
         } else {
-          section.classList.remove('active');
+          button.classList.remove('show');
+          button.classList.add('hide');
         }
-      });
+      }
+      lastScrollY = window.scrollY;
     };
+  
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
 
   return (
     <ParallaxProvider>
       <main className="relative flex flex-col min-h-screen min-w-screen h-auto bg-gray-300 overflow-y-auto">
-        
+      <div className="absolute top-4 left-4 z-20">
+        <button
+          onClick={() => window.location.href = '/'}
+          className="text-white p-2 rounded-full transition-transform transform hover:scale-105"
+        >
+          <FontAwesomeIcon icon={faHome} size="4x" />
+        </button>
+      </div>
         {/* Description and TOC Section */}
         <ParallaxBanner
           layers={[
@@ -128,7 +149,7 @@ export default function Work() {
                   {workItems.map((item, index) => (
                     <li key={index}>
                       <button 
-                        onClick={() => scrollToSection(index)} 
+                        onClick={() => window.open(item.url, '_blank')}
                         className="text-white font-bold text-3xl p-2 transition-transform transform hover:scale-105"
                       >
                         {item.title.toUpperCase()}
@@ -188,26 +209,36 @@ export default function Work() {
                   transition={{ duration: 2 }}
                 >
                   <Image
-                    src={`${item.logo}`} // Update this path based on your logo location
+                    src={`${item.logo}`}
                     alt={`${item.title} logo`}
-                    width={200} // Set a uniform width for all logos
-                    height={100} // Set a uniform height for all logos
-                    className="object-contain" // Ensures the logo fits within the container
+                    width={250}
+                    height={125}
+                    className="object-contain"
                   />
                 </motion.div>
-                <motion.p
-                  className={`font-semibold text-gray-900 text-xl mt-4 p-4 text-white bg-black/15 rounded-lg `}
+                <motion.div
+                  className="font-medium text-gray-900 text-xl mt-4 p-4 text-white bg-black/15 rounded-lg"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 1, duration: 1 }}
                 >
-                  {item.text}
-                </motion.p>
+                  <h1 className="font-bold">Role: </h1>
+                  <p className="p-2">{item.role}</p>
+                  <h1 className="font-bold">Result: </h1>
+                  <p className="p-2">{item.result}</p>
+                </motion.div>
               </motion.div>
             </section>
           ))}
         </div>
       </ParallaxBanner>
+      <button
+        id="backToTopButton"
+        className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 text-gray-500 p-3 rounded-full transition-transform duration-300 ease-in-out"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <FontAwesomeIcon icon={faAngleUp} size="5x" />
+      </button>
     </main>
   </ParallaxProvider>
   );  

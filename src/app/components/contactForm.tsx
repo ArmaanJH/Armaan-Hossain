@@ -16,7 +16,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 px-4 pt-4 shadow-lg rounded-lg max-w-lg h-1/2 w-full z-50"
+      className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300/25 px-4 pt-4 shadow-lg rounded-lg max-w-lg h-1/2 w-full z-50"
     >
       <form className='h-full flex flex-col'>
         <div className="mb-4">

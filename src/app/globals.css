@@ -64,11 +64,24 @@ html {
   scroll-behavior: smooth;
 }
 
-@layer utilities {
-  .text-border {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-  }
+/* Hide the button initially */
+#backToTopButton {
+  transform: translateY(100%); /* Start off-screen */
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
+/* Slide up when showing */
+#backToTopButton.show {
+  transform: translate(-50%, 0); /* Center horizontally and slide up */
+  opacity: 1;
+}
+
+/* Slide down when hiding */
+#backToTopButton.hide {
+  transform: translate(-50%, 100%); /* Slide down off-screen */
+  opacity: 0;
+}
+
 
 
