@@ -64,4 +64,11 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer utilities {
+  .text-border {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+}
+
 

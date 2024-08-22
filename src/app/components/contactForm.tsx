@@ -16,7 +16,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-700 px-4 pt-4 shadow-lg rounded-lg max-w-lg h-1/2 w-full z-50"
+      className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-300 px-4 pt-4 shadow-lg rounded-lg max-w-lg h-1/2 w-full z-50"
     >
       <form className='h-full flex flex-col'>
         <div className="mb-4">
@@ -25,7 +25,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 p-2 block bg-gray-300 font-bold text-black w-full border border-gray-300 rounded-md"
+            className="mt-1 p-2 block bg-gray-100 font-bold text-black w-full border border-gray-300 rounded-md"
             required
           />
         </div>
@@ -34,7 +34,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="mt-1 p-2 block bg-gray-300 font-medium text-black w-full border border-gray-300 rounded-md h-full"
+            className="mt-1 p-2 block bg-gray-100 font-medium text-black w-full border border-gray-300 rounded-md h-full"
             required
           ></textarea>
         </div>
