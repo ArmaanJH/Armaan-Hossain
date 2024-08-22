@@ -112,7 +112,7 @@ export default function Work() {
               </p>
               <div className="mt-4">
                 <button className="rounded-full border-gray-300 border-4 bg-gray-900 px-4 py-2 transition-transform transform hover:scale-105">
-                  <p className="font-semibold">DOWNLOAD</p>
+                  <p className="font-semibold text-white">DOWNLOAD</p>
                 </button>
               </div>
             </div>
