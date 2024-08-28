@@ -5,6 +5,7 @@ import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import WorkItem from './components/workComponent';
 
 
 export default function Work() {
@@ -56,8 +57,8 @@ export default function Work() {
     let lastScrollY = window.scrollY;
   
     const handleScroll = () => {
-      if (button) { // Add this null check
-        if (window.scrollY > 200) {  // Adjust the scroll threshold as needed
+      if (button) {
+        if (window.scrollY > 200) {
           if (window.scrollY > lastScrollY) {
             button.classList.remove('show');
             button.classList.add('hide');
@@ -76,7 +77,6 @@ export default function Work() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
 
   return (
     <ParallaxProvider>
@@ -174,67 +174,13 @@ export default function Work() {
       >
         <div className="relative z-10 w-full bg-transparent flex flex-col space-y-16">
           {workItems.map((item, index) => (
-            <section
-              key={index}
-              id={`section-${index}`}
-              className={`flex flex-col md:flex-row min-h-screen items-center justify-between`}
-            >
-              <motion.div
-                className={`relative w-full md:w-1/2 ${index % 2 === 0 ? 'order-1' : 'order-2'}`}
-                initial={{ x: index % 2 === 0 ? '-100%' : '100%', opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: 'spring', stiffness: 20, delay: 0 }}
-              >
-                <Image 
-                  src={item.image} 
-                  alt={item.title} 
-                  layout="responsive" 
-                  width={700} 
-                  height={400} 
-                  className={`shadow-lg object-cover ${index % 2 === 0 ? 'rounded-r-lg' : 'rounded-l-lg'}`} 
-                />
-              </motion.div>
-              <motion.div
-                className={`flex flex-col w-full md:w-1/2 p-6 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                style={{ zIndex: 10 }}
-              >
-                <motion.div
-                  className="p-2 flex justify-center items-center"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 2 }}
-                >
-                  <Image
-                    src={`${item.logo}`}
-                    alt={`${item.title} logo`}
-                    width={250}
-                    height={125}
-                    className="object-contain"
-                  />
-                </motion.div>
-                <motion.div
-                  className="font-medium text-gray-900 text-xl mt-4 p-4 text-white bg-black/15 rounded-lg"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 1, duration: 1 }}
-                >
-                  <h1 className="font-bold">Role: </h1>
-                  <p className="p-2">{item.role}</p>
-                  <h1 className="font-bold">Result: </h1>
-                  <p className="p-2">{item.result}</p>
-                </motion.div>
-              </motion.div>
-            </section>
+            <WorkItem key={index} item={item} index={index} itemCount={workItems.length} />
           ))}
         </div>
       </ParallaxBanner>
       <button
         id="backToTopButton"
-        className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 text-gray-500 p-3 rounded-full transition-transform duration-300 ease-in-out"
+        className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 text-white p-3 rounded-full transition-transform duration-300 ease-in-out"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <FontAwesomeIcon icon={faAngleUp} size="5x" />
