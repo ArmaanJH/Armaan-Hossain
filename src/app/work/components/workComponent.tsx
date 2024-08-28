@@ -28,26 +28,8 @@ const WorkItem = ({ item, index, itemCount }: WorkItemProps) => {
       id={`section-${index}`}
       className={`flex flex-col md:flex-row min-h-screen items-center justify-between`}
     >
-      <motion.div
-        className={`relative w-full md:w-1/2 ${isEven ? 'order-1' : 'order-2'}`}
-        style={{ x }}
-      >
-        <Image 
-          src={item.image} 
-          alt={item.title} 
-          layout="responsive" 
-          width={700} 
-          height={400} 
-          className={`shadow-lg object-cover ${isEven ? 'rounded-r-lg' : 'rounded-l-lg'}`} 
-        />
-      </motion.div>
-      <motion.div
-        className={`flex flex-col w-full md:w-1/2 p-6 ${isEven ? 'order-2' : 'order-1'}`}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        style={{ zIndex: 10 }}
-      >
+      {/* Mobile Layout: Image below text */}
+      <div className={`w-full md:w-1/2 p-6 ${isEven ? 'md:order-2' : 'md:order-1'} flex flex-col`}>
         <motion.div
           className="p-2 flex justify-center items-center"
           initial={{ opacity: 0 }}
@@ -73,10 +55,39 @@ const WorkItem = ({ item, index, itemCount }: WorkItemProps) => {
           <h1 className="px-2 font-bold">Result: </h1>
           <p className="p-2">{item.result}</p>
         </motion.div>
+
+        {/* Mobile: Image appears below text */}
+        <motion.div
+          className="block md:hidden mt-4"
+          style={{ x }}
+        >
+          <Image 
+            src={item.image} 
+            alt={item.title} 
+            layout="responsive" 
+            width={700} 
+            height={400} 
+            className="shadow-lg object-cover rounded-lg" 
+          />
+        </motion.div>
+      </div>
+
+      {/* Desktop Layout: Image side by side with text */}
+      <motion.div
+        className={`hidden md:block relative w-full md:w-1/2 ${isEven ? 'order-1' : 'order-2'}`}
+        style={{ x }}
+      >
+        <Image 
+          src={item.image} 
+          alt={item.title} 
+          layout="responsive" 
+          width={700} 
+          height={400} 
+          className={`shadow-lg object-cover ${isEven ? 'rounded-r-lg' : 'rounded-l-lg'}`} 
+        />
       </motion.div>
     </section>
   );
 };
-
 
 export default WorkItem;

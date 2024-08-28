@@ -15,7 +15,7 @@ export default function Work() {
       role: "Developed a user-centric web app using NextJS and Firebase, architecting core infrastructure with advanced features like artist booking platforms and integrated payment systems.",
       result: "Successfully onboarded a significant number of artists through collaborative marketing strategies, contributing to notable user growth.",
       image: "/images/tapped.png",
-      logo: "/images/tapped_reverse.png",
+      logo: "/images/tappedLogo.png",
       url: "https://www.tapped.ai"
     },
     {
@@ -31,7 +31,7 @@ export default function Work() {
       role: "Provided vital support in team management and AI tool development, leveraging OpenAI and Stable Diffusion to create innovative features, including an AI-driven image generator.",
       result: "Influenced investment opportunities, drove organizational growth, and successfully launched four web applications integral to Tapped AI’s tool suite.",
       image: "/images/app_tapped_ai.png",
-      logo: "/images/tapped_reverse.png",
+      logo: "/images/tappedLogo.png",
       url: "https://app.tapped.ai/"
     },
     {
@@ -81,14 +81,14 @@ export default function Work() {
   return (
     <ParallaxProvider>
       <main className="relative flex flex-col min-h-screen min-w-screen h-auto bg-gray-300 overflow-y-auto">
-      <div className="absolute top-4 left-4 z-20">
-        <button
-          onClick={() => window.location.href = '/'}
-          className="text-white p-2 rounded-full transition-transform transform hover:scale-105"
-        >
-          <FontAwesomeIcon icon={faHome} size="4x" />
-        </button>
-      </div>
+        <div className="absolute top-4 left-4 z-20 sm:top-2 sm:left-2">
+          <button
+            onClick={() => window.location.href = '/'}
+            className="text-white p-2 rounded-full transition-transform transform hover:scale-105"
+          >
+            <FontAwesomeIcon icon={faHome} size="4x" />
+          </button>
+        </div>
         {/* Description and TOC Section */}
         <ParallaxBanner
           layers={[
@@ -122,35 +122,34 @@ export default function Work() {
               speed: -10,
             },
           ]}
-          className="h-screen"
+          className="h-auto"
         >
-          
-          <div className="relative z-10 flex flex-col md:flex-row w-full min-h-screen items-center justify-center">
+          <div className="relative z-10 flex flex-col md:flex-row w-full min-h-screen items-center justify-center pt-28 px-4 sm:px-2">
             {/* Left Side with Description */}
-            <div className="flex-1 flex flex-col items-center justify-center p-6">
-              <p className="text-xl text-center text-white font-bold">
+            <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-2">
+              <p className="text-lg sm:text-xl text-center text-white font-bold">
                 Below is my previous work as well as some explanations of my role in these projects. If you&apos;d like more detail, you can download my resume by clicking the button below.
               </p>
               <div className="mt-4">
-                <button className="rounded-full border-gray-300 border-4 bg-gray-900 px-4 py-2 transition-transform transform hover:scale-105">
+                <button className="rounded-full border-gray-300 border-4 bg-gray-900 px-3 py-1.5 sm:px-2 sm:py-1 transition-transform transform hover:scale-105">
                   <p className="font-semibold text-white">DOWNLOAD</p>
                 </button>
               </div>
             </div>
             {/* Table of Contents on the Right */}
             <div className="flex-1 flex items-center justify-center">
-              <div className="p-6 h-[60vh] w-full max-w-xl flex flex-col justify-center text-center">
-                <h2 className="text-8xl font-bold mb-4 text-white text-center w-full">
+              <div className="p-4 sm:p-2 h-auto w-full max-w-xl flex flex-col justify-center text-center">
+                <h2 className="text-5xl sm:text-8xl pt-4 font-bold mb-4 text-white text-center w-full">
                   PROJECTS
                 </h2>
                 {/* Separator Line */}
-                <div className="w-full border-b-4 border-gray-400 my-4"></div>
-                <ul className="space-y-4">
+                <div className="w-full border-b-4 border-gray-400 my-2"></div>
+                <ul className="space-y-2">
                   {workItems.map((item, index) => (
                     <li key={index}>
                       <button 
                         onClick={() => window.open(item.url, '_blank')}
-                        className="text-white font-bold text-3xl p-2 transition-transform transform hover:scale-105"
+                        className="text-white font-bold sm:text-xl text-lg p-2 transition-transform transform hover:scale-105"
                       >
                         {item.title.toUpperCase()}
                       </button>
@@ -160,7 +159,7 @@ export default function Work() {
               </div>
             </div>
           </div>
-      </ParallaxBanner>
+        </ParallaxBanner>
   
       {/* Work Sections with Shared Parallax Background */}
       <ParallaxBanner
