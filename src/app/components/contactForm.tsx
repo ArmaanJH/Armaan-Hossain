@@ -9,6 +9,13 @@ type ContactFormProps = {
 export default function ContactForm({ onClose }: ContactFormProps) {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [charCount, setCharCount] = useState(0);
+  const maxChars = 600;  // Set your character limit here
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+    setCharCount(e.target.value.length);
+  };
 
   return (
     <motion.div
@@ -20,9 +27,9 @@ export default function ContactForm({ onClose }: ContactFormProps) {
     >
       <form className='h-full flex flex-col'>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-white">Email</label>
           <input
             type="email"
+            placeholder='youremail@something.com'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="mt-1 p-2 block bg-gray-100 font-bold text-black w-full border border-gray-300 rounded-md"
@@ -30,13 +37,15 @@ export default function ContactForm({ onClose }: ContactFormProps) {
           />
         </div>
         <div className="mb-4 flex-grow">
-          <label className="block text-sm font-medium text-white">Message</label>
           <textarea
+            placeholder="Let me know what you're reaching out about!"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={handleMessageChange}
             className="mt-1 p-2 block bg-gray-100 font-medium text-black w-full border border-gray-300 rounded-md h-full"
+            maxLength={maxChars}
             required
           ></textarea>
+          <div className="text-right text-sm font-semibold text-gray-300">{charCount}/{maxChars}</div>
         </div>
         <div className='flex-shrink-0 flex flex-row p-8'>
           <button type="submit" className="bg-gray-500 font-bold w-1/2 text-white px-2 py-2 rounded-md">
