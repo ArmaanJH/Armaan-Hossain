@@ -52,7 +52,7 @@ const WorkItem = ({ item, index, itemCount }: WorkItemProps) => {
           className="p-2 flex justify-center items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1.5 }}
         >
           <Image
             src={`${item.logo}`}
@@ -66,7 +66,7 @@ const WorkItem = ({ item, index, itemCount }: WorkItemProps) => {
           className="font-medium text-gray-900 text-xl mt-4 p-4 text-white bg-black/15 rounded-lg"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ duration: 1.5 }}
         >
           <h1 className="px-2 font-bold">Role: </h1>
           <p className="p-2">{item.role}</p>
