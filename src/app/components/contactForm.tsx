@@ -6,6 +6,7 @@ import { faEnvelopeCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 type ContactFormProps = {
   onClose: () => void;
+  className?: string
 };
 
 export default function ContactForm({ onClose }: ContactFormProps) {
@@ -94,7 +95,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
         <div className="h-full flex flex-col items-center justify-center text-center">
           <FontAwesomeIcon icon={faEnvelopeCircleCheck} size="4x" className="text-white mb-4" />
           <p className="text-xl font-semibold text-white mb-4">
-            Your email has been sent! I will be in contact with you soon.
+            Your email has been sent! I&apos;ll get back to you as soon as I can!.
           </p>
           <button
             type="button"
