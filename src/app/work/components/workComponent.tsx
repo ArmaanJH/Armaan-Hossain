@@ -50,9 +50,9 @@ const WorkItem = ({ item, index, itemCount }: WorkItemProps) => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
         >
-          <h1 className="px-2 font-bold">Role: </h1>
+          <h1 className="px-2 text-center font-bold">Role </h1>
           <p className="p-2">{item.role}</p>
-          <h1 className="px-2 font-bold">Result: </h1>
+          <h1 className="px-2 text-center font-bold">Result </h1>
           <p className="p-2">{item.result}</p>
         </motion.div>
 

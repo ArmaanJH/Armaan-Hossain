@@ -127,11 +127,14 @@ export default function Work() {
           <div className="relative z-10 flex flex-col md:flex-row w-full min-h-screen items-center justify-center pt-28 px-4 sm:px-2">
             {/* Left Side with Description */}
             <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-2">
-              <p className="text-lg sm:text-xl text-center text-white font-bold">
-                Below is my previous work as well as some explanations of my role in these projects. If you&apos;d like more detail, you can download my resume by clicking the button below.
+              <p className="text-lg sm:text-xl text-center text-white px-2 font-bold">
+                Below is my previous work as well as some explanations of my role in these projects. If you&apos;d like more detail, you can download my resume by clicking the button below. You can also check out the current versions of these projects by clicking the links under projects.
               </p>
               <div className="mt-4">
-                <button className="rounded-full border-gray-300 border-4 bg-gray-900 px-3 py-1.5 sm:px-2 sm:py-1 transition-transform transform hover:scale-105">
+                <button
+                  onClick={() => window.open('/resume.pdf', '_blank')}
+                  className="rounded-full border-gray-300 border-4 bg-gray-900 px-3 py-1.5 sm:px-2 sm:py-1 transition-transform transform hover:scale-105"
+                >
                   <p className="font-semibold text-white">DOWNLOAD</p>
                 </button>
               </div>
@@ -166,7 +169,7 @@ export default function Work() {
         layers={[
           {
             image: '/images/parallaxbg.svg',
-            speed: 100,
+            speed: 120,
           },
         ]}
         className="h-auto bg-contain bg-center"
