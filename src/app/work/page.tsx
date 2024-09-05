@@ -1,6 +1,4 @@
 'use client';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,28 +17,12 @@ export default function Work() {
       url: "https://www.tapped.ai"
     },
     {
-      title: "LS Technologies",
-      role: "Led the development of key features using ReactJS and Python for the FAA tool, improving error handling and optimizing the SQL database for better data access and user experience.",
-      result: "Reduced bugs during deployment by 67% and revitalized the CRRT tool's user interface, enhancing the overall product quality and user satisfaction.",
-      image: "/images/ls_tech.png",
-      logo: "/images/ls_logo.png",
-      url: "https://lstechllc.com"
-    },
-    {
-      title: "Tapped App Inc",
+      title: "Tapped AI",
       role: "Provided vital support in team management and AI tool development, leveraging OpenAI and Stable Diffusion to create innovative features, including an AI-driven image generator.",
       result: "Influenced investment opportunities, drove organizational growth, and successfully launched four web applications integral to Tapped AI’s tool suite.",
       image: "/images/app_tapped_ai.png",
       logo: "/images/tappedLogo.png",
       url: "https://app.tapped.ai/"
-    },
-    {
-      title: "EnterLinked",
-      role: "Founded and led the development of a social entertainment media ranking app with React Native and Tailwind CSS, optimizing system design for efficiency and user experience.",
-      result: "Achieved low operational costs and instantaneous load times while delivering a user-friendly and aesthetically pleasing app interface based on user feedback.",
-      image: "/images/enterlinked_1.png",
-      logo: "/images/enterlinked_logo.png",
-      url: "https://enterlinked.app"
     },
     {
       title: "Afrozaa Jamil কংকা",
@@ -49,6 +31,22 @@ export default function Work() {
       image: "/images/aj_art.png",
       logo: "/images/aj_logo.png",
       url: "https://armaanjh.github.io/Afrozaa-Jamil-Art-Website/"
+    },
+    {
+      title: "LS Technologies",
+      role: "Led the development of key features using ReactJS and Python for the FAA tool, improving error handling and optimizing the SQL database for better data access and user experience.",
+      result: "Reduced bugs during deployment by 67% and revitalized the CRRT tool's user interface, enhancing the overall product quality and user satisfaction.",
+      image: "/images/ls_tech.png",
+      logo: "/images/ls_logo.png",
+      url: "https://lstechllc.com"
+    },
+    {
+      title: "EnterLinked",
+      role: "Founded and led the development of a social entertainment media ranking app with React Native and Tailwind CSS, optimizing system design for efficiency and user experience.",
+      result: "Achieved low operational costs and instantaneous load times while delivering a user-friendly and aesthetically pleasing app interface based on user feedback.",
+      image: "/images/enterlinked_1.png",
+      logo: "/images/enterlinked_logo.png",
+      url: "https://enterlinked.app"
     },
   ];
 
@@ -135,7 +133,7 @@ export default function Work() {
                   onClick={() => window.open('/resume.pdf', '_blank')}
                   className="rounded-full border-gray-300 border-4 bg-gray-900 px-3 py-1.5 sm:px-2 sm:py-1 transition-transform transform hover:scale-105"
                 >
-                  <p className="font-semibold text-white">DOWNLOAD</p>
+                  <p className="font-semibold text-white">RESUME</p>
                 </button>
               </div>
             </div>
