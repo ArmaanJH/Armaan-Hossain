@@ -136,7 +136,7 @@ export default function Work() {
                 </p>
                 <div className="mt-4">
                   <button
-                    onClick={() => window.open('/resume.pdf', '_blank')}
+                    onClick={() => window.open('/resume-9-6-24.pdf', '_blank')}
                     className="rounded-full border-gray-300 border-4 bg-gray-900 px-3 py-1.5 sm:px-4 sm:py-1 transition-transform transform hover:scale-105"
                   >
                     <p className="font-semibold text-white">RESUME</p>
