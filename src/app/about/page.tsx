@@ -6,6 +6,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import ProfileSection from './components/profileSection';
 import PanelTriggers from './components/panelTriggers';
 import SlidingPanel from './components/slidingPanel';
+import { TransitionLink } from '../components/utils/transitionLink';
 
 export default function About() {
   const [activePanel, setActivePanel] = useState<string | null>(null);
@@ -22,12 +23,9 @@ export default function About() {
       </Head>
       <main className="relative flex md:flex-row flex-col min-h-screen min-w-screen bg-gray-300 md:p-20 p-6 pt-20 overflow-hidden">
         <div className="absolute top-4 left-4 z-20 sm:top-2 sm:left-2">
-          <button
-            onClick={() => window.location.href = '/'}
-            className="text-white p-2 rounded-full transition-transform transform hover:scale-105"
-          >
-            <FontAwesomeIcon icon={faHome} size="4x" />
-          </button>
+        <TransitionLink href="/" className="text-white p-2 rounded-full transition-transform transform hover:scale-105">
+          <FontAwesomeIcon icon={faHome} size="4x" />
+        </TransitionLink>
         </div>
 
         {/* Moving Squares */}

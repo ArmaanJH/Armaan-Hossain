@@ -66,7 +66,7 @@ html {
 
 /* Hide the button initially */
 #backToTopButton {
-  transform: translateY(100%); /* Start off-screen */
+  transform: translateY(100%);
   opacity: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
@@ -83,5 +83,30 @@ html {
   opacity: 0;
 }
 
+/* body {
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+} */
 
+body {
+  transition: all 0.5s ease-in-out;
+}
 
+.page-transition {
+  opacity: 0;
+  background: #d1d5db;
+  transform: scale(0.9);
+  filter: blur(15px);
+}
+
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from 'react';
 import ContactForm from "./components/contactForm";
 import { AnimatePresence, motion } from "framer-motion";
+import { TransitionLink } from "./components/utils/transitionLink";
 
 export default function Home() {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -57,14 +58,14 @@ export default function Home() {
         {/* Right Side */}
         <div className="flex flex-col items-center md:items-end justify-evenly w-full md:w-1/2 h-full pb-10 pt-10 z-10 gap-4">
           <div className="w-full">
-            <Link href="/work">
+            <TransitionLink href="/work">
               <p className="text-white text-center md:text-right text-4xl sm:text-6xl md:text-7xl font-bold leading-tight transition-transform transform hover:scale-105">WORK</p>
-            </Link>
+            </TransitionLink>
           </div>
           <div className="w-full mt-4">
-            <Link href="/about">
+            <TransitionLink href="/about">
               <p className="text-white text-center md:text-right text-4xl sm:text-6xl md:text-7xl font-bold leading-tight transition-transform transform hover:scale-105">ABOUT</p>
-            </Link>
+            </TransitionLink>
           </div>
 
           {/*Contact Form Section*/}
