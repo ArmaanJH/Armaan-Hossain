@@ -27,7 +27,7 @@ export default function SlidingPanel({ activePanel, closePanel }: SlidingPanelPr
         <>
           <h2 className="text-5xl font-bold mb-4">TECH</h2>
           <p className="text-xl">
-            As a dedicated and passionate Software Engineer at LS Technologies, I specialize in leveraging ReactJS and Python within an Agile environment to deliver high-quality, innovative solutions.
+          As a dedicated and passionate Software Engineer at LS Technologies, I specialize in leveraging ReactJS and Python within an Agile environment to deliver high-quality, innovative solutions. With a robust foundation in Computer Science and a keen understanding of Cybersecurity, I bring a unique blend of skills to the table, ensuring both functional and secure software development.
           </p>
           <div className="text-left pt-8">
             <p className="text-3xl font-bold py-2">FRONT-END TECHNOLOGIES</p> 
@@ -43,7 +43,7 @@ export default function SlidingPanel({ activePanel, closePanel }: SlidingPanelPr
         <>
           <h2 className="text-5xl font-bold mb-4">EDUCATION</h2>
           <p className="text-xl">
-            I hold a Bachelor of Science in Computer Science, which has equipped me with a comprehensive understanding of the core principles of computing.
+          I hold a Bachelor of Science in Computer Science, which has equipped me with a comprehensive understanding of the core principles of computing. My professional journey is characterized by a relentless pursuit of growth and learning, always striving to expand my expertise and stay at the forefront of technological advancements.
           </p>
           <div className="text-left pt-8">
             <p className="text-3xl font-bold py-2">COLLEGE</p> 
@@ -59,7 +59,7 @@ export default function SlidingPanel({ activePanel, closePanel }: SlidingPanelPr
         <>
           <h2 className="text-5xl font-bold mb-4">TEAMWORK</h2>
           <p className="text-xl">
-            I thrive in collaborative settings, valuing teamwork and communication as essential elements of success.
+            I thrive in collaborative settings, valuing teamwork and communication as essential elements of success. My approach is driven by a commitment to continuous improvement, both in my professional capabilities and as an individual. I am passionate about embracing new challenges and opportunities to enhance my skill set and contribute meaningfully to the tech community.
           </p>
           <div className="text-left pt-8">
             <p className="text-3xl font-bold py-2">EXPERIENCE</p> 
