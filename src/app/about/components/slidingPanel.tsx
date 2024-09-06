@@ -39,6 +39,9 @@ export default function SlidingPanel({ activePanel, closePanel }: SlidingPanelPr
                 <p className="pb-8 font-semibold">NodeJS, ExpressJS, SQL, NoSQL DB, Django, GraphQL</p>
                 <p className="text-3xl font-bold py-2">DEVELOPMENT TOOLS</p>
                 <p className="pb-8 font-semibold">NPM, Git, Docker, Jira, Expo Go, AWS, iOS, Figma, Stripe</p>
+                <p className="text-3xl font-bold py-2">CLEARANCE</p>
+                <p className="pb-8 font-semibold">Public Trust</p>
+
               </div>
             </>
           )}
