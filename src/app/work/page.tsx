@@ -33,14 +33,6 @@ export default function Work() {
       url: "https://armaanjh.github.io/Afrozaa-Jamil-Art-Website/"
     },
     {
-      title: "LS Technologies",
-      role: "Led the development of key features using ReactJS and Python for the FAA tool, improving error handling and optimizing the SQL database for better data access and user experience.",
-      result: "Reduced bugs during deployment by 67% and revitalized the CRRT tool's user interface, enhancing the overall product quality and user satisfaction.",
-      image: "/images/ls_tech.png",
-      logo: "/images/ls_logo.png",
-      url: "https://lstechllc.com"
-    },
-    {
       title: "EnterLinked",
       role: "Founded and led the development of a social entertainment media ranking app with React Native and Tailwind CSS, optimizing system design for efficiency and user experience.",
       result: "Achieved low operational costs and instantaneous load times while delivering a user-friendly and aesthetically pleasing app interface based on user feedback.",
@@ -48,6 +40,14 @@ export default function Work() {
       logo: "/images/enterlinked_logo.png",
       url: "https://enterlinked.app"
     },
+    {
+      title: "LS Technologies",
+      role: "Led the development of key features using ReactJS and Python for the FAA tool, improving error handling and optimizing the SQL database for better data access and user experience.",
+      result: "Reduced bugs during deployment by 67% and revitalized the CRRT tool's user interface, enhancing the overall product quality and user satisfaction.",
+      image: "/images/ls_tech.png",
+      logo: "/images/ls_logo.png",
+      url: "https://lstechllc.com"
+    }
   ];
 
   useEffect(() => {
@@ -131,7 +131,7 @@ export default function Work() {
               <div className="mt-4">
                 <button
                   onClick={() => window.open('/resume.pdf', '_blank')}
-                  className="rounded-full border-gray-300 border-4 bg-gray-900 px-3 py-1.5 sm:px-2 sm:py-1 transition-transform transform hover:scale-105"
+                  className="rounded-full border-gray-300 border-4 bg-gray-900 px-3 py-1.5 sm:px-4 sm:py-1 transition-transform transform hover:scale-105"
                 >
                   <p className="font-semibold text-white">RESUME</p>
                 </button>

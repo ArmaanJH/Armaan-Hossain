@@ -3,9 +3,9 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import ProfileSection from './components/profileSection';  // Import ProfileSection component
-import PanelTriggers from './components/panelTriggers';    // Import PanelTriggers component
-import SlidingPanel from './components/slidingPanel';      // Import SlidingPanel component
+import ProfileSection from './components/profileSection';
+import PanelTriggers from './components/panelTriggers';
+import SlidingPanel from './components/slidingPanel';
 
 export default function About() {
   const [activePanel, setActivePanel] = useState<string | null>(null);
