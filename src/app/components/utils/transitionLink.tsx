@@ -42,7 +42,6 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
     body?.classList.remove("page-transition"); // Remove transition classes
     newBody?.classList.remove("page-enter");
 
-    await sleep(450); // Delay to avoid slide in
     setParallaxEnabled(true);
   };
 
