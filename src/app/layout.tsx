@@ -13,9 +13,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Armaan Hossain",
   description: "Armaan Hossain's Portfolio",
-  icons: {
-    icon: "/favicon.ico",
-  }
 };
 
 export default function RootLayout({
