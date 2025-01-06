@@ -23,7 +23,7 @@ export default function Work() {
       role: "Developed a organizational structure tool using a MERN stack, introducing operations infrastructure and a system for easy task management.",
       result: "A successful task management system allowing the team at TCC to achieve organizational efficiency.",
       image: "/images/TCC.png",
-      logo: "/images/tcc_Logo.jpg",
+      logo: "/images/tcc_logo.jpg",
       url: "https://www.tccentertainment.com"
     },
     {
