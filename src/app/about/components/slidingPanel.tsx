@@ -34,11 +34,11 @@ export default function SlidingPanel({ activePanel, closePanel }: SlidingPanelPr
               </p>
               <div className="text-left pt-8">
                 <p className="text-3xl font-bold py-2">FRONT-END TECHNOLOGIES</p> 
-                <p className="pb-8 font-semibold">ReactJS, NextJS, React Native, JQuery, Tailwind CSS,</p>
+                <p className="pb-8 font-semibold">ReactJS, NextJS, React Native, JQuery, Tailwind CSS, HTML/CSS</p>
                 <p className="text-3xl font-bold py-2">BACK-END TECHNOLOGIES</p>
-                <p className="pb-8 font-semibold">NodeJS, ExpressJS, SQL, NoSQL DB, Django, GraphQL</p>
+                <p className="pb-8 font-semibold">NodeJS, ExpressJS, SQL, NoSQL DB, Django, GraphQL, Flask</p>
                 <p className="text-3xl font-bold py-2">DEVELOPMENT TOOLS</p>
-                <p className="pb-8 font-semibold">NPM, Git, Docker, Jira, Expo Go, AWS, iOS, Figma, Stripe</p>
+                <p className="pb-8 font-semibold">NPM, Git, Docker, Jira, Expo Go, AWS, iOS, Figma, Stripe, Google Cloud Platform (GCP)</p>
                 <p className="text-3xl font-bold py-2">CLEARANCE</p>
                 <p className="pb-8 font-semibold">Public Trust</p>
 
@@ -53,7 +53,7 @@ export default function SlidingPanel({ activePanel, closePanel }: SlidingPanelPr
               </p>
               <div className="text-left pt-8">
                 <p className="text-3xl font-bold py-2">COLLEGE</p> 
-                <p className="pb-8 font-semibold">Fordham College at Rosehill, 2021</p>
+                <p className="pb-8 font-semibold">Fordham College at Rose Hill, 2021</p>
                 <p className="text-3xl font-bold py-2">DEGREE</p>
                 <p className="pb-8 font-semibold">Bachelor of Science in Computer Science</p>
                 <p className="text-3xl font-bold py-2">GPA</p>

@@ -19,6 +19,14 @@ export default function Work() {
       url: "https://www.tapped.ai"
     },
     {
+      title: "TCC Entertainment",
+      role: "Developed a organizational structure tool using a MERN stack, introducing operations infrastructure and a system for easy task management.",
+      result: "A successful task management system allowing the team at TCC to achieve organizational efficiency.",
+      image: "/images/TCC.png",
+      logo: "/images/tcc_Logo.jpg",
+      url: "https://www.tccentertainment.com"
+    },
+    {
       title: "Tapped AI",
       role: "Provided vital support in team management and AI tool development, leveraging OpenAI and Stable Diffusion to create innovative features, including an AI-driven image generator.",
       result: "Influenced investment opportunities, drove organizational growth, and successfully launched four web applications integral to Tapped AI’s tool suite.",
@@ -136,7 +144,7 @@ export default function Work() {
                 </p>
                 <div className="mt-4">
                   <button
-                    onClick={() => window.open('/resume-sep-24.pdf', '_blank')}
+                    onClick={() => window.open('/resume-jan-25.pdf', '_blank')}
                     className="rounded-full border-gray-300 border-4 bg-gray-900 px-3 py-1.5 sm:px-4 sm:py-1 transition-transform transform hover:scale-105"
                   >
                     <p className="font-semibold text-white">RESUME</p>
