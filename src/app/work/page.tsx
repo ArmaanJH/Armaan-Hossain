@@ -11,6 +11,14 @@ import { useParallax } from '../contexts/parallaxContext';
 export default function Work() {
   const workItems = [
     {
+      title: "Romanticly",
+      role: "Designed and developed a full-stack web application that allows users to create poems inspired by their partners in the style of famous poets. Used NextJS, TypeScript, OpenAI, and Tailwind CSS, implementing a robust backend with firebase.",
+      result: "Successfully launched the app with over 100 users in the first month, receiving positive feedback for its unique concept and user-friendly interface.",
+      image: "/images/romanticly.png",
+      logo: "/images/romanticlyLogo.png",
+      url: "https://romanticly.vercel.app"
+    },
+    {
       title: "Tapped App Inc",
       role: "Developed a user-centric web app using NextJS and Firebase, architecting core infrastructure with advanced features like artist booking platforms and integrated payment systems.",
       result: "Successfully onboarded a significant number of artists through collaborative marketing strategies, contributing to notable user growth.",
